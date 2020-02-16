@@ -1,0 +1,31 @@
+---
+name: Alert
+menu: Components
+route: /components/alert
+---
+
+import { Playground, Props } from 'docz'
+import { Alert } from '@scoped/react-alert/src'
+
+# Alert
+
+## Properties
+
+<Props of={Alert} />
+
+## Basic usage
+
+<Playground>
+  <Alert kind="warning">Some message</Alert>
+</Playground>
+
+<br />
+
+## Using different kinds
+
+<Playground>
+  <Alert kind="info">Some message</Alert>
+  <Alert kind="positive">Some message</Alert>
+  <Alert kind="negative">Some message</Alert>
+  <Alert kind="warning">Some message</Alert>
+</Playground>

@@ -1,0 +1,32 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "docz:dev": "lerna exec --scope '@scoped/documentation' npm run dev",
+    "docz:serve": "lerna exec --scope '@scoped/documentation' npm run serve",
+    "docz:build": "lerna run build --scope '@scoped/documentation' --stream",
+    "lerna": "lerna",
+    "bootstrap": "lerna bootstrap --hoist --force-local",
+    "version": "lerna version",
+    "build": "lerna run build --ignore '@scoped/documentation'",
+    "prebuild": "npm run copy:components",
+    "copy:components": "npx copyfiles packages/**/documentation/components/*.mdx packages/documentation/src/components --exclude packages/documentation --flat",
+    "nuke": "lerna exec \"rm -f package-lock.json npm-shrinkwrap.json\" && lerna clean --yes && lerna bootstrap && lerna exec --stream -- \"test -f package-lock.json || npm install --package-lock-only\""
+  },
+  "prettier": {
+    "semi": false,
+    "useTabs": false,
+    "trailingComma": "none",
+    "singleQuote": true,
+    "printWidth": 120,
+    "tabWidth": 2
+  },
+  "devDependencies": {
+    "@emotion/core": "^10.0.27",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "copyfiles": "^2.2.0",
+    "lerna": "^3.20.2",
+    "typescript": "^3.7.5"
+  }
+}
