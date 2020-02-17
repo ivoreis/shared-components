@@ -8,7 +8,7 @@
     "build": "pika build",
     "dev": "parcel example/index.html --open"
   },
-  "peerDependencies": {
+  "dependencies": {
     "theme-ui": "^0.3.1",
     "react": "npm:@pika/react@^16.12.2",
     "react-dom": "npm:@pika/react-dom@^16.12.2"

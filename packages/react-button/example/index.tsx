@@ -7,7 +7,7 @@ import { Button } from '../src'
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <Button kind="primary" scale="normal" outline={false}>
+    <Button kind="secondary" scale="normal" outline={false}>
       Click me
     </Button>
   </ThemeProvider>

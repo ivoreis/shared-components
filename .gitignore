@@ -1,7 +1,7 @@
 node_modules
 dist
 pkg
-
+yarn.lock
 .rts2_*
 .cache
 .docz
