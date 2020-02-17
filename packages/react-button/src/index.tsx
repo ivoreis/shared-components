@@ -1,27 +1,27 @@
 /** @jsx jsx */
-import { jsx, Box } from 'theme-ui'
+import { jsx, Box, Theme } from 'theme-ui'
 import { SFC } from 'react'
 
-type Kind = 'primary' | 'secondary' | 'cancel' | 'dark' | 'gray' | 'job'
+type Kind = 'primary' | 'secondary' | 'cancel' | 'dark' | 'gray'
 
 export interface ButtonProps {
   children?: React.ReactNode
-  scale: 'small' | 'normal' | 'big'
+  scale: 'small' | 'normal' | 'large'
   kind: Kind
   outline: boolean
 }
 
 const scales = {
   small: {
-    p: 2,
+    p: 1,
     fontSize: 1
   },
   normal: {
-    p: 3,
+    p: 2,
     fontSize: 2
   },
-  big: {
-    p: 4,
+  large: {
+    p: 3,
     fontSize: 3
   }
 }
@@ -35,7 +35,7 @@ const getKindStyles = (outline: boolean) => (bg: string, color: string) => {
     color: outline ? bg : color,
     transition: 'all 0.3s',
     '&:hover': {
-      boxShadow: `inset 0 0 0 1000px ${boxShadowColor}`,
+      boxShadow: (p: Theme) => `inset 0 0 0 1000px ${(p.colors as any)[boxShadowColor]}`,
       color
     }
   }
@@ -55,5 +55,5 @@ export const Button: SFC<ButtonProps> = props => {
     ...getScale(props),
     ...getKind(props)
   }
-  return <Box {...props} sx={innerProps} />
+  return <Box {...props} as={'button'} sx={innerProps} />
 }

@@ -8,6 +8,7 @@ import { Alert } from '../src'
 const App = () => (
   <ThemeProvider theme={theme}>
     <Alert kind="positive">Hello world!</Alert>
+    <br />
   </ThemeProvider>
 )
 

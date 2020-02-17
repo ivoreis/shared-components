@@ -10,6 +10,13 @@ const App = () => (
     <Button kind="secondary" scale="normal" outline={false}>
       Click me
     </Button>
+    <br />
+    <Button kind="primary" scale="normal" outline>
+      Click me
+    </Button>
+    <Button kind="primary" scale="large" outline>
+      Click me
+    </Button>
   </ThemeProvider>
 )
 
