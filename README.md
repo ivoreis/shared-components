@@ -11,13 +11,47 @@ Example monorepo project with minimal setup for shared components
   - [ECMAScript Modules (esm)](https://nodejs.org/api/esm.html)
   - Browser compatible bundle
 - Packages should run in all evergreen browsers. IE 11 excluded. If anyone consuming these packages need to provide support for IE11 or other older browsers they need to include these packages in their transpilation process
+- Minimum dependencies (You can use tools like [bundlephobia](https://bundlephobia.com/) to check package size before adding to the library). No ramda. No moment :)
+
+Example output:
+
+```ts
+  // package.json
+  "esnext": "dist-src/index.js",
+  "types": "dist-types/index.d.ts",
+  "module": "dist-web/index.js",
+  "browser": "dist-web/index.bundled.js"
+```
+
+```ts
+// Publish-ready pkg folder
+pkg
+├── dist-src
+│   └── index.js
+├── dist-types
+│   ├── example
+│   │   ├── index.d.ts
+│   │   └── theme.d.ts
+│   ├── pkg
+│   │   └── dist-src
+│   │       └── index.d.ts
+│   └── src
+│       └── index.d.ts
+├── dist-web
+│   ├── index.bundled.js
+│   ├── index.bundled.js.map
+│   ├── index.js
+│   └── index.js.map
+└── package.json
+```
 
 ## Using
 
 - [Docz](https://github.com/doczjs/docz)
 - [Lerna](https://lerna.js.org/)
-- [Pika](https://github.com/pikapkg/pack) and [Article](https://www.pika.dev/blog/introducing-pika-pack/)
-- [Parcel](https://parceljs.org/)
+- [Pika](https://github.com/pikapkg/pack) ([More info](https://www.pika.dev/blog/introducing-pika-pack/))
+- [Parcel (local dev)](https://parceljs.org/)
+- [Theme UI - Design System](https://theme-ui.com/)
 
 ## Commands
 
