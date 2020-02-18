@@ -6,9 +6,9 @@ type Kind = 'primary' | 'secondary'
 
 export interface ButtonProps {
   children?: React.ReactNode
-  scale: 'small' | 'normal' | 'large'
-  kind: Kind
-  outline: boolean
+  scale?: 'small' | 'normal' | 'large'
+  kind?: Kind
+  outline?: boolean
 }
 
 const scales = {
@@ -35,7 +35,7 @@ const getKindStyles = (outline: boolean) => (bg: string, color: string) => {
     color: outline ? bg : color,
     transition: 'all 0.3s',
     '&:hover': {
-      boxShadow: (p: Theme) => `inset 0 0 0 1000px ${(p.colors as any)[boxShadowColor]}`,
+      boxShadow: (p: Theme) => (outline ? `inset 0 0 0 1000px ${(p.colors as any)[boxShadowColor]}` : bg),
       color
     }
   }
