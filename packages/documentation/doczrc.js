@@ -1,4 +1,7 @@
 export default {
+  title: 'Documentation',
+  dest: '../../docs',
+  base: '/shared-components',
   typescript: true,
   docgenConfig: {
     searchPatterns: ['!../**/node_modules', '../react-*/src/**/*']
