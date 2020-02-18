@@ -5,4 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.0.2 (2020-02-18)
 
-**Note:** Version bump only for package @scoped/documentation
+**Note:** Version bump only for package @ivoreis/documentation

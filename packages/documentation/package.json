@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@scoped/documentation",
+  "name": "@ivoreis/documentation",
   "version": "0.0.2",
   "license": "MIT",
   "files": [
@@ -15,8 +15,8 @@
     "serve": "docz serve"
   },
   "dependencies": {
-    "@scoped/react-alert": "^0.0.2",
-    "@scoped/react-button": "^0.0.2",
+    "@ivoreis/react-alert": "^0.0.2",
+    "@ivoreis/react-button": "^0.0.2",
     "docz": "^2.3.0-alpha.13",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
