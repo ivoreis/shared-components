@@ -8,9 +8,6 @@ export default {
     text: '#000',
     background: '#fff',
     primary: '#1fb6ff',
-    secondary: '#5352ed',
-    cancel: '#ff4949',
-    dark: '#273444',
-    gray: '#8492a6'
+    secondary: '#5352ed'
   }
 }

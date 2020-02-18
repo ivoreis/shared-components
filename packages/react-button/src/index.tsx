@@ -2,7 +2,7 @@
 import { jsx, Box, Theme } from 'theme-ui'
 import { SFC } from 'react'
 
-type Kind = 'primary' | 'secondary' | 'cancel' | 'dark' | 'gray'
+type Kind = 'primary' | 'secondary'
 
 export interface ButtonProps {
   children?: React.ReactNode
