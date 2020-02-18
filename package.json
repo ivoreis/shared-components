@@ -4,7 +4,7 @@
   "scripts": {
     "lerna": "lerna",
     "bootstrap": "lerna bootstrap --hoist --force-local",
-    "nuke": "lerna exec \"rm -f package-lock.json npm-shrinkwrap.json\" && lerna clean --yes && lerna bootstrap && lerna exec --stream -- \"test -f package-lock.json || npm install --package-lock-only\"",
+    "nuke": "npx rimraf node_modules && npm i && lerna exec \"rm -f package-lock.json npm-shrinkwrap.json\" && lerna clean --yes && lerna bootstrap && lerna exec --stream -- \"test -f package-lock.json || npm install --package-lock-only\"",
     "docz:dev": "lerna exec --scope '@scoped/documentation' npm run dev",
     "docz:serve": "lerna exec --scope '@scoped/documentation' npm run serve",
     "docz:build": "lerna run build --scope '@scoped/documentation' --stream",
@@ -23,10 +23,11 @@
   },
   "devDependencies": {
     "@emotion/core": "^10.0.27",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
     "copyfiles": "^2.2.0",
     "lerna": "^3.20.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "rimraf": "^3.0.2",
     "typescript": "^3.7.5"
   }
 }
