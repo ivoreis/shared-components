@@ -10,9 +10,11 @@
     "dev": "parcel example/index.html --open"
   },
   "dependencies": {
-    "react": "npm:@pika/react@^16.12.2",
-    "react-dom": "npm:@pika/react-dom@^16.12.2",
     "theme-ui": "^0.3.1"
+  },
+  "peerDependencies": {
+    "react": "npm:@pika/react@^16.12.2",
+    "react-dom": "npm:@pika/react-dom@^16.12.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
