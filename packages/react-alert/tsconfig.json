@@ -18,5 +18,6 @@
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "jsx": "react"
-  }
+  },
+  "include": ["src"]
 }
