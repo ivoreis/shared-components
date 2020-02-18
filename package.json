@@ -1,6 +1,7 @@
 {
   "name": "root",
   "private": true,
+  "version": "0.0.1",
   "scripts": {
     "lerna": "lerna",
     "bootstrap": "lerna bootstrap --hoist --force-local",
@@ -8,17 +9,19 @@
     "docz:dev": "lerna exec --scope '@scoped/documentation' npm run dev",
     "docz:serve": "lerna exec --scope '@scoped/documentation' npm run serve",
     "docz:build": "lerna run build --scope '@scoped/documentation' --stream",
-    "version": "lerna version",
     "build": "lerna run build --ignore '@scoped/documentation'",
     "publish": "lerna publish from-package --contents pkg --registry http://localhost:4873",
     "prebuild": "npm run copy:components",
-    "copy:components": "npx copyfiles packages/**/documentation/components/*.mdx packages/documentation/src/components --exclude packages/documentation --flat"
+    "copy:components": "npx copyfiles packages/**/documentation/components/*.mdx packages/documentation/src/components --exclude packages/documentation --flat",
+    "commitzen": "commitizen"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@emotion/core": "^10.0.27",
+    "commitizen": "^4.0.3",
     "copyfiles": "^2.2.0",
+    "cz-conventional-changelog": "^3.1.0",
     "husky": "^4.2.3",
     "lerna": "^3.20.2",
     "react": "^16.12.0",
@@ -43,5 +46,10 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
