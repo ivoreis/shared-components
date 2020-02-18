@@ -3,7 +3,8 @@
   "version": "0.0.2",
   "description": "Example button component",
   "author": "Ivo Reis",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": "git://github.com/ivoreis/shared-components.git",
   "scripts": {
     "build": "pika build",
     "dev": "parcel example/index.html --open"

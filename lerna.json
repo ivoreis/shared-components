@@ -1,10 +1,9 @@
 {
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "version": "0.0.2",
   "command": {
     "publish": {
+      "npmClient": "npm",
       "conventionalCommits": true,
       "message": "chore(release): publish [skip-ci]"
     }
