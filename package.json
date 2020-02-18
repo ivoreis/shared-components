@@ -10,8 +10,26 @@
     "docz:build": "lerna run build --scope '@scoped/documentation' --stream",
     "version": "lerna version",
     "build": "lerna run build --ignore '@scoped/documentation'",
+    "publish": "lerna publish from-package --contents pkg --registry http://localhost:4873",
     "prebuild": "npm run copy:components",
     "copy:components": "npx copyfiles packages/**/documentation/components/*.mdx packages/documentation/src/components --exclude packages/documentation --flat"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@emotion/core": "^10.0.27",
+    "copyfiles": "^2.2.0",
+    "husky": "^4.2.3",
+    "lerna": "^3.20.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.7.5"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "prettier": {
     "semi": false,
@@ -21,13 +39,9 @@
     "printWidth": 120,
     "tabWidth": 2
   },
-  "devDependencies": {
-    "@emotion/core": "^10.0.27",
-    "copyfiles": "^2.2.0",
-    "lerna": "^3.20.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "rimraf": "^3.0.2",
-    "typescript": "^3.7.5"
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
