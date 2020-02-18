@@ -2,6 +2,8 @@
 
 Example monorepo project with minimal setup for shared components
 
+Styleguide available in gh-pages. https://ivoreis.github.io/shared-components/
+
 ## Goals
 
 - Minimal configuration
