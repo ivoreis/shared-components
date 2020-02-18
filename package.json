@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "lerna": "lerna",
     "bootstrap": "lerna bootstrap --hoist --force-local",
     "nuke": "npx rimraf node_modules && npm i && lerna exec \"rm -f package-lock.json npm-shrinkwrap.json\" && lerna clean --yes && lerna bootstrap && lerna exec --stream -- \"test -f package-lock.json || npm install --package-lock-only\"",
     "docz:dev": "lerna exec --scope '@scoped/documentation' npm run dev",
@@ -11,9 +10,9 @@
     "docz:build": "lerna run build --scope '@scoped/documentation' --stream",
     "build": "lerna run build --ignore '@scoped/documentation'",
     "publish": "lerna publish from-package --contents pkg --registry http://localhost:4873",
+    "version": "lerna version --conventional-commits",
     "prebuild": "npm run copy:components",
-    "copy:components": "npx copyfiles packages/**/documentation/components/*.mdx packages/documentation/src/components --exclude packages/documentation --flat",
-    "commitzen": "commitizen"
+    "copy:components": "npx copyfiles packages/**/documentation/components/*.mdx packages/documentation/src/components --exclude packages/documentation --flat"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
