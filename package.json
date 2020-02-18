@@ -11,6 +11,8 @@
     "build": "lerna run build --ignore '@scoped/documentation'",
     "publish": "lerna publish from-package --contents pkg",
     "version": "lerna version --conventional-commits",
+    "version:prerelease": "lerna version --conventional-prerelease",
+    "version:graduate": "lerna version --conventional-graduate",
     "prebuild": "npm run copy:components",
     "copy:components": "npx copyfiles packages/**/documentation/components/*.mdx packages/documentation/src/components --exclude packages/documentation --flat"
   },

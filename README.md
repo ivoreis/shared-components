@@ -49,6 +49,8 @@ pkg
 
 - [Docz](https://github.com/doczjs/docz)
 - [Lerna](https://lerna.js.org/)
+- [Conventional-commits](https://www.conventionalcommits.org/en/v1.0.0/)
+- [Commitizen](http://commitizen.github.io/cz-cli/)
 - [Pika](https://github.com/pikapkg/pack) ([More info](https://www.pika.dev/blog/introducing-pika-pack/))
 - [Parcel (local dev)](https://parceljs.org/)
 - [Theme UI - Design System](https://theme-ui.com/)
@@ -85,7 +87,7 @@ pkg
 
 ## Development
 
-For documentation:
+**For documentation:**
 
 ```ts
   npm i // install local dependencies
@@ -93,11 +95,20 @@ For documentation:
   npm run docz:dev // runs docz in local development
 ```
 
-For components:
+**For components:**
 
 ```ts
   npm i // install local dependencies
   npm run bootstrap // the same as lerna bootstrap (install all dependencies)
   cd packages/... // go to your project
   npm run dev // runs the code in localhost for quick prototyping
+```
+
+## Publishing
+
+```ts
+  npm run version // bump version of packages changed since the last release (using conventional-commits / Semver)
+  npm run version:prerelease // release current changes as prerelease versions
+  npm run version:graduate // graduate prerelease versioned packages to stable versions
+  npm run publish -- --registry=REGISTRY_URL // publishes the packages to `REGISTRY_URL`
 ```
