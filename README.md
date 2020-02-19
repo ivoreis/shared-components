@@ -47,6 +47,17 @@ pkg
 └── package.json
 ```
 
+## Todo
+
+- [ ] Add github actions
+  - [ ] Build and publish pre/alpha releases on branch PRs
+  - [ ] Build and publish releases on master
+- [ ] Add jest with snapshot testing
+- [ ] Add eslint
+  - [ ] Prettier integration
+  - [ ] A11y integration
+- [ ] Add react-axe
+
 ## Using
 
 - [Docz](https://github.com/doczjs/docz)
