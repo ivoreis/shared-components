@@ -53,7 +53,7 @@ pkg
 - [ ] Add github actions
   - [ ] Build and publish pre/alpha releases on branch PRs
   - [ ] Build and publish releases on npn pre/alpha tags
-- [ ] Add jest with snapshot testing
+- [ ] Add snapshot testing
 - [x] Add eslint
   - [x] Prettier integration
   - [x] A11y integration
