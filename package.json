@@ -35,14 +35,6 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "prettier": {
-    "semi": false,
-    "useTabs": false,
-    "trailingComma": "none",
-    "singleQuote": true,
-    "printWidth": 120,
-    "tabWidth": 2
-  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"

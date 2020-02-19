@@ -53,9 +53,9 @@ pkg
   - [ ] Build and publish pre/alpha releases on branch PRs
   - [ ] Build and publish releases on npn pre/alpha tags
 - [ ] Add jest with snapshot testing
-- [ ] Add eslint
-  - [ ] Prettier integration
-  - [ ] A11y integration
+- [x] Add eslint
+  - [x] Prettier integration
+  - [x] A11y integration
 - [x] Add react-axe
 
 ## Using

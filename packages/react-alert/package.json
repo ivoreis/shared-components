@@ -7,7 +7,8 @@
   "repository": "git://github.com/ivoreis/shared-components.git",
   "scripts": {
     "build": "pika build",
-    "dev": "parcel example/index.html --open"
+    "dev": "parcel example/index.html --open",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "theme-ui": "^0.3.1"
@@ -29,7 +30,16 @@
     "@types/react-axe": "^3.1.0",
     "@types/react-dom": "^16.9.5",
     "@types/theme-ui": "^0.3.0",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.4.0",
     "parcel": "^1.12.4",
+    "prettier": "^1.19.1",
     "react": "npm:@pika/react@^16.12.2",
     "react-axe": "^3.4.1",
     "react-dom": "npm:@pika/react-dom@^16.12.2",
@@ -55,5 +65,42 @@
     "presets": [
       "@babel/preset-react"
     ]
+  },
+  "prettier": {
+    "semi": false,
+    "useTabs": false,
+    "trailingComma": "none",
+    "singleQuote": true,
+    "printWidth": 120,
+    "tabWidth": 2
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint",
+      "eslint-plugin-react",
+      "eslint-plugin-react-hooks",
+      "jsx-a11y"
+    ],
+    "extends": [
+      "prettier",
+      "prettier/@typescript-eslint",
+      "prettier/react"
+    ],
+    "settings": {
+      "react": {
+        "pragma": "React",
+        "version": "detect"
+      }
+    },
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "rules": {}
   }
 }
