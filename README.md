@@ -9,9 +9,9 @@ Styleguide available in gh-pages. https://ivoreis.github.io/shared-components/
 - Minimal configuration
 - Easy local development / testing experience
 - Packages include:
-  - [Typescript declaration files](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html)
-  - [ECMAScript Modules (esm)](https://nodejs.org/api/esm.html)
-  - Browser compatible bundle
+  - ESNext - Unstranspiled code
+  - Types - [Typescript declaration files](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html)
+  - ESM - [ECMAScript Modules (esm)](https://nodejs.org/api/esm.html)
 - Packages should run in all evergreen browsers. IE 11 excluded. If anyone consuming these packages need to provide support for IE11 or other older browsers they need to include these packages in their transpilation process
 - Minimum dependencies (You can use tools like [bundlephobia](https://bundlephobia.com/) to check package size before adding to the library). No ramda. No moment :)
 
@@ -22,7 +22,6 @@ Example output:
   "esnext": "dist-src/index.js",
   "types": "dist-types/index.d.ts",
   "module": "dist-web/index.js",
-  "browser": "dist-web/index.bundled.js"
 ```
 
 ```ts
@@ -31,17 +30,8 @@ pkg
 ├── dist-src
 │   └── index.js
 ├── dist-types
-│   ├── example
-│   │   ├── index.d.ts
-│   │   └── theme.d.ts
-│   ├── pkg
-│   │   └── dist-src
-│   │       └── index.d.ts
-│   └── src
-│       └── index.d.ts
+│   └── index.d.ts
 ├── dist-web
-│   ├── index.bundled.js
-│   ├── index.bundled.js.map
 │   ├── index.js
 │   └── index.js.map
 └── package.json
@@ -67,7 +57,7 @@ pkg
 - [Commitizen](http://commitizen.github.io/cz-cli/)
 - [Pika](https://github.com/pikapkg/pack) ([More info](https://www.pika.dev/blog/introducing-pika-pack/))
 - [Parcel (local dev)](https://parceljs.org/)
-- [Theme UI - Design System](https://theme-ui.com/)
+- [Theme UI (Design System)](https://theme-ui.com/)
 
 ## Commands
 

@@ -6,8 +6,6 @@ exports.onCreateWebpackConfig = ({
   const extraConfig = {
     resolve: {
       alias: {
-        '~root': path.resolve(__dirname, '..', 'src'),
-        '~base': path.resolve(__dirname, '..', '..'),
         '@emotion/core': path.resolve(__dirname, '..', '..', '..', 'node_modules', '@emotion/core')
       }
     }

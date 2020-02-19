@@ -1,8 +1,7 @@
 {
-  "packages": [
-    "packages/*"
-  ],
-  "version": "0.0.3",
+  "lerna": "3.4.1",
+  "version": "independent",
+  "packages": ["packages/*"],
   "command": {
     "publish": {
       "npmClient": "npm",
