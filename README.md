@@ -51,12 +51,12 @@ pkg
 
 - [ ] Add github actions
   - [ ] Build and publish pre/alpha releases on branch PRs
-  - [ ] Build and publish releases on master
+  - [ ] Build and publish releases on npn pre/alpha tags
 - [ ] Add jest with snapshot testing
 - [ ] Add eslint
   - [ ] Prettier integration
   - [ ] A11y integration
-- [ ] Add react-axe
+- [x] Add react-axe
 
 ## Using
 
