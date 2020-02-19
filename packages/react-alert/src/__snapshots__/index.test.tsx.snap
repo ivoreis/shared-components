@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it works 1`] = `
+<div
+  class="css-1x8en36-Alert"
+  kind="positive"
+>
+  My message
+</div>
+`;
