@@ -49,6 +49,7 @@ pkg
 
 ## Todo
 
+- [ ] Create a package generator with all needed configuration
 - [ ] Add github actions
   - [ ] Build and publish pre/alpha releases on branch PRs
   - [ ] Build and publish releases on npn pre/alpha tags
