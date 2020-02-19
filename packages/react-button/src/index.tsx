@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Theme } from 'theme-ui'
+import { jsx, Theme } from 'theme-ui'
 import { SFC } from 'react'
 
 type Kind = 'primary' | 'secondary'
@@ -55,5 +55,5 @@ export const Button: SFC<ButtonProps> = props => {
     ...getScale(props),
     ...getKind(props)
   }
-  return <Box {...props} as={'button'} sx={innerProps} />
+  return <button {...props} sx={innerProps} />
 }

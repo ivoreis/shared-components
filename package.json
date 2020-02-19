@@ -7,7 +7,7 @@
     "nuke": "npx rimraf node_modules && npm i && lerna exec \"rm -f package-lock.json npm-shrinkwrap.json\" && lerna clean --yes && lerna bootstrap && lerna exec --stream -- \"test -f package-lock.json || npm install --package-lock-only\"",
     "docz:dev": "lerna exec --scope '@ivoreis/documentation' npm run dev",
     "docz:serve": "lerna exec --scope '@ivoreis/documentation' npm run serve",
-    "docz:build": "lerna run build --scope '@ivoreis/documentation' --stream",
+    "docz:build": "npx rimraf docs && lerna run build --scope '@ivoreis/documentation' --stream",
     "build": "lerna run build --ignore '@ivoreis/documentation'",
     "publish": "lerna publish from-package --contents pkg",
     "version": "lerna version --conventional-commits",
