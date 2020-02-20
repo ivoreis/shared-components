@@ -48,9 +48,7 @@ pkg
   - [x] Prettier integration
   - [x] A11y integration
 - [x] Add react-axe to packages
-- [ ] Add accessibility to documentation
-- [ ] Add react-axe
-- [ ] Add accessibilityjs
+- [x] Add react-axe to documentation
 
 ## Using
 
