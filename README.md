@@ -47,7 +47,10 @@ pkg
 - [x] Add eslint
   - [x] Prettier integration
   - [x] A11y integration
-- [x] Add react-axe
+- [x] Add react-axe to packages
+- [ ] Add accessibility to documentation
+- [ ] Add react-axe
+- [ ] Add accessibilityjs
 
 ## Using
 
