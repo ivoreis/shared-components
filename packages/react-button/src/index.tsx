@@ -46,6 +46,7 @@ const getScale = ({ scale = 'normal' }: ButtonProps) => scales[scale]
 const getKind = ({ kind = 'primary', outline = false }: ButtonProps) => kinds(outline)(kind)
 
 export const Button: SFC<ButtonProps> = props => {
+  const { outline, ...other } = props
   const innerProps = {
     cursor: 'pointer',
     marginX: 1,
@@ -55,5 +56,5 @@ export const Button: SFC<ButtonProps> = props => {
     ...getScale(props),
     ...getKind(props)
   }
-  return <button {...props} sx={innerProps} />
+  return <button {...other} sx={innerProps} />
 }
