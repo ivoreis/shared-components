@@ -1,0 +1,15 @@
+{
+  "fonts": {
+    "family": {
+      "base": {
+        "value": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", sans-serif"
+      },
+      "heading": {
+        "value": "\"Avenir Next\", sans-serif"
+      },
+      "monospace": {
+        "value": "Menlo, monospace"
+      }
+    }
+  }
+}

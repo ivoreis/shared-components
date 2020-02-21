@@ -4,7 +4,10 @@
   "description": "Example button component",
   "author": "Ivo Reis",
   "license": "MIT",
-  "repository": "git://github.com/ivoreis/shared-components.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivoreis/shared-components.git"
+  },
   "scripts": {
     "build": "pika build",
     "dev": "parcel example/index.html --open",
@@ -27,6 +30,7 @@
     "@emotion/core": "^10.0.27",
     "@pika/pack": "^0.5.0",
     "@pika/plugin-build-types": "^0.9.2",
+    "@pika/plugin-bundle-types": "^0.9.2",
     "@pika/plugin-build-web": "^0.9.2",
     "@pika/plugin-standard-pkg": "^0.9.2",
     "@testing-library/jest-dom": "^5.1.1",
@@ -59,6 +63,9 @@
       ],
       [
         "@pika/plugin-build-types"
+      ],
+      [
+        "@pika/plugin-bundle-types"
       ],
       [
         "@pika/plugin-build-web"

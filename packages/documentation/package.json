@@ -15,9 +15,10 @@
     "serve": "docz serve"
   },
   "dependencies": {
+    "@ivoreis/design-tokens": "^0.0.3",
     "@ivoreis/react-alert": "^0.0.3",
     "@ivoreis/react-button": "^0.0.3",
-    "docz": "latest",
+    "docz": "2.3.0-alpha.13",
     "gatsby-plugin-react-axe": "^0.3.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

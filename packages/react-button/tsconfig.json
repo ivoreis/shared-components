@@ -4,6 +4,7 @@
     "module": "esnext",
     "lib": ["dom", "esnext"],
     "strict": true,
+    "resolveJsonModule": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
@@ -19,5 +20,5 @@
     "moduleResolution": "node",
     "jsx": "react"
   },
-  "include": ["src"]
+  "include": ["src"],
 }

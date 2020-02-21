@@ -1,8 +1,8 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { Alert } from '.'
+import { Button } from '../src'
 
 test('it works', () => {
-  const { container } = render(<Alert kind="positive">My message</Alert>)
+  const { container } = render(<Button />)
   expect(container.firstChild).toMatchSnapshot()
 })

@@ -1,0 +1,59 @@
+{
+  "name": "@ivoreis/design-tokens",
+  "version": "0.0.3",
+  "description": "Design tokens",
+  "author": "Ivo Reis",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivoreis/shared-components.git"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "extract": "node scripts/figma.js | jq .",
+    "postbuild": "prettier dist/** --write && pika build"
+  },
+  "devDependencies": {
+    "@pika/pack": "^0.5.0",
+    "@pika/plugin-copy-assets": "^0.9.2",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "node-fetch": "^2.6.0",
+    "prettier": "^1.19.1",
+    "quicktype": "^15.0.210",
+    "style-dictionary": "^2.8.3",
+    "typescript": "^3.7.5"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-copy-assets",
+        {
+          "files": [
+            "dist/"
+          ]
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "prettier",
+      "prettier/@typescript-eslint"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "rules": {}
+  },
+  "main": "dist/base.ts"
+}

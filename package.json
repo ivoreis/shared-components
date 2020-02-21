@@ -15,7 +15,8 @@
     "version:prerelease": "lerna version --conventional-prerelease",
     "version:graduate": "lerna version --conventional-graduate",
     "prebuild": "npm run copy:components",
-    "copy:components": "npx copyfiles packages/**/documentation/components/*.mdx packages/documentation/src/components --exclude packages/documentation --flat"
+    "copy:components": "npx copyfiles packages/**/documentation/components/*.mdx packages/documentation/src/components --exclude packages/documentation --flat",
+    "present:ds": "mdx-deck presentations/design-systems.mdx"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -26,9 +27,10 @@
     "cz-conventional-changelog": "^3.1.0",
     "husky": "^4.2.3",
     "lerna": "^3.20.2",
-    "rimraf": "^3.0.2",
+    "mdx-deck": "^4.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "rimraf": "^3.0.2",
     "typescript": "^3.7.5"
   },
   "husky": {

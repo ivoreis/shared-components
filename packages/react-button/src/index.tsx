@@ -8,7 +8,7 @@ export interface ButtonProps {
   children?: React.ReactNode
   scale?: 'small' | 'normal' | 'large'
   kind?: Kind
-  outline?: boolean
+  outlined?: boolean
 }
 
 const scales = {
@@ -26,27 +26,27 @@ const scales = {
   }
 }
 
-const getKindStyles = (outline: boolean) => (bg: string, color: string) => {
-  const boxShadowColor = outline ? bg : 'transparent'
+const getKindStyles = (outlined: boolean) => (bg: string, color: string) => {
+  const boxShadowColor = outlined ? bg : 'transparent'
 
   return {
     boxShadow: `inset 0 0 0 1px ${boxShadowColor}`,
-    bg: outline ? 'transparent' : bg,
-    color: outline ? bg : color,
+    bg: outlined ? 'transparent' : bg,
+    color: outlined ? bg : color,
     transition: 'all 0.3s',
     '&:hover': {
-      boxShadow: (p: Theme) => (outline ? `inset 0 0 0 1000px ${(p.colors as any)[boxShadowColor]}` : bg),
+      boxShadow: (p: Theme) => (outlined ? `inset 0 0 0 1000px ${(p.colors as any)[boxShadowColor]}` : bg),
       color
     }
   }
 }
 
-const kinds = (outline: boolean) => (kind: Kind) => getKindStyles(outline)(kind, 'background')
+const kinds = (outlined: boolean) => (kind: Kind) => getKindStyles(outlined)(kind, 'background')
 const getScale = ({ scale = 'normal' }: ButtonProps) => scales[scale]
-const getKind = ({ kind = 'primary', outline = false }: ButtonProps) => kinds(outline)(kind)
+const getKind = ({ kind = 'primary', outlined = false }: ButtonProps) => kinds(outlined)(kind)
 
 export const Button: SFC<ButtonProps> = props => {
-  const { outline, ...other } = props
+  const { outlined, scale, kind, ...other } = props
   const innerProps = {
     cursor: 'pointer',
     marginX: 1,
