@@ -15,7 +15,6 @@
     "serve": "docz serve"
   },
   "dependencies": {
-    "@ivoreis/design-tokens": "^0.0.3",
     "@ivoreis/react-alert": "^0.0.3",
     "@ivoreis/react-button": "^0.0.3",
     "docz": "2.3.0-alpha.13",
