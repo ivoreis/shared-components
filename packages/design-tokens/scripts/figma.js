@@ -1,29 +1,36 @@
 const fetch = require('node-fetch')
 
-const selectStyles = document => document.find(c => c.name === 'Styles')
-const selectPalette = styles => styles.find(c => c.name === 'Palette')
-const extractRGBA = obj => `rgba(${obj.r * 255}, ${obj.g * 255}, ${obj.b * 255}, ${obj.r * 255}, ${obj.a})`
-const selectColour = colorShape => colorShape.find(c => c.name === 'Colour').fills[0].color
-const reduceColour = (acc, colour) => ({
-  ...acc,
-  ...{
-    [colour.name]: extractRGBA(selectColour(colour.children))
-  }
-})
-const mapColour = palette => ({
-  [palette.name]: palette.children.reduce(reduceColour, {})
-})
-const flattenColour = (acc, v) => ({
+/* Helpers */
+const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x) // Left to right eval
+const flatten = (acc, v) => ({
   ...acc,
   ...v
 })
-const generatePalette = document => (
-  selectPalette(
-    selectStyles(document).children
-  ).children
-  .map(mapColour)
-  .reduce(flattenColour, {})
-)
+const find = name => doc => doc.find(c => c.name == name)
+/* Selectors */
+const selectChildren = doc => doc.children
+const selectDocument = doc => doc.document
+const selectFillColour = doc => doc.fills[0].color
+/* Convertors */
+const convertRGBAToString = doc => `rgba(${doc.r * 255}, ${doc.g * 255}, ${doc.b * 255}, ${doc.r * 255}, ${doc.a})`
+/* Extractors */
+const extractRGBA = compose(convertRGBAToString, selectFillColour, find('Colour'), selectChildren)
+const extractPalette = compose(selectChildren, find('Palette'), selectChildren, find('Styles'))
+
+const reduceColour = (acc, colour) => ({
+  ...acc,
+  ...{
+    [colour.name]: extractRGBA(colour)
+  }
+})
+const colourMapper = palette => ({
+  [palette.name]: selectChildren(palette).reduce(reduceColour, {})
+})
+
+const generatePalette = doc =>
+  extractPalette(doc)
+  .map(colourMapper)
+  .reduce(flatten, {})
 
 async function getStylesArtboard(figmaApiKey, figmaId) {
   if (!figmaApiKey || !figmaId) {
@@ -43,7 +50,7 @@ async function getStylesArtboard(figmaApiKey, figmaId) {
       grids: {},
       spacers: {},
       colors: {
-        base: generatePalette(figmaTreeStructure.document.children)
+        base: compose(generatePalette, selectChildren, selectDocument)(figmaTreeStructure)
       },
       fonts: {}
     }

@@ -1,14 +1,11 @@
-const buildPath = 'dist/'
-
-function minifyDictionary(obj) {
-  var toRet = {}
+const minifyDictionary = obj => {
   if (obj.hasOwnProperty('value')) {
     return obj.value
-  } else {
-    for (var name in obj) {
-      if (obj.hasOwnProperty(name)) {
-        toRet[name] = minifyDictionary(obj[name])
-      }
+  }
+  var toRet = {}
+  for (var name in obj) {
+    if (obj.hasOwnProperty(name)) {
+      toRet[name] = minifyDictionary(obj[name])
     }
   }
   return toRet
@@ -16,44 +13,33 @@ function minifyDictionary(obj) {
 
 require('style-dictionary').registerFormat({
   name: 'javascript/module/minified',
-  formatter: function (dictionary, config) {
+  formatter: function(dictionary, config) {
     return `const tokens = ${JSON.stringify(minifyDictionary(dictionary.properties), null, 2)};
 export default tokens;
 export type Theme = typeof tokens;`
   }
 })
 
-const StyleDictionaryBase = require('style-dictionary').extend({
-  source: ['properties/base/**/*.json'],
-  platforms: {
-    javascript: {
-      transformGroup: 'js',
-      buildPath,
-      files: [{
-        destination: 'base.ts',
-        format: 'javascript/module/minified'
-      }]
+const buildTokens = (sourcePattern, outputFilename, outputDir) => {
+  const sd = require('style-dictionary').extend({
+    source: [sourcePattern],
+    platforms: {
+      javascript: {
+        transformGroup: 'js',
+        buildPath: outputDir,
+        files: [
+          {
+            destination: outputFilename,
+            format: 'javascript/module/minified'
+          }
+        ]
+      }
     }
-  }
-})
+  })
+  console.log(`Building ${sourcePattern} to ${outputDir}${outputFilename}`)
+  sd.buildAllPlatforms()
+  console.log('Done\n')
+}
 
-const StyleDictionaryTheme = require('style-dictionary').extend({
-  source: ['properties/theme1/**/*.json'],
-  platforms: {
-    javascript: {
-      transformGroup: 'js',
-      buildPath,
-      files: [{
-        destination: 'theme1.ts',
-        format: 'javascript/module/minified'
-      }]
-    }
-  }
-})
-
-console.log('Cleaning...')
-StyleDictionaryBase.buildAllPlatforms()
-StyleDictionaryTheme.buildAllPlatforms()
-console.log('\n\nBuilding...')
-StyleDictionaryBase.buildAllPlatforms()
-StyleDictionaryTheme.buildAllPlatforms()
+buildTokens('properties/base/**/*.json', 'base.ts', 'dist/')
+buildTokens('properties/theme1/**/*.json', 'theme1.ts', 'dist/')
