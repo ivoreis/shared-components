@@ -8,10 +8,12 @@
     "docz:dev": "lerna exec --scope '@ivoreis/documentation' npm run dev",
     "docz:serve": "lerna exec --scope '@ivoreis/documentation' npm run serve",
     "docz:build": "npx rimraf docs && lerna run build --scope '@ivoreis/documentation' --stream",
-    "test": "lerna run test --ignore '@ivoreis/documentation'",
+    "test": "lerna run test:all --ignore '@ivoreis/documentation'",
     "build": "lerna run build --ignore '@ivoreis/documentation'",
     "publish": "lerna publish from-package --contents pkg",
+    "publish:dryrun": "lerna publish from-package --contents pkg --no-git-tag-version --no-push",
     "version": "lerna version --conventional-commits",
+    "version:dryrun": "lerna version --conventional-commits --no-git-tag-version --no-push",
     "version:prerelease": "lerna version --conventional-prerelease",
     "version:graduate": "lerna version --conventional-graduate",
     "prebuild": "npm run copy:components",
@@ -30,8 +32,14 @@
     "mdx-deck": "^4.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "@types/react": "^16.9.22",
+    "@types/react-dom": "^16.9.5",
     "rimraf": "^3.0.2",
     "typescript": "^3.7.5"
+  },
+  "resolutions": {
+    "@types/react": "16.9.22",
+    "@types/react-dom": "16.9.5"
   },
   "husky": {
     "hooks": {
