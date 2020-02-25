@@ -1,0 +1,25 @@
+name: Test, Build, Publish
+on: [push, pull_request]
+jobs:
+  test-build-publish:
+    if: ${{ contains(github.event.message, '[SKIP-CI]') == false }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run tests
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run nuke && npm run test
+      - name: Build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run build
+      - name: Generate prerelease
+        if: github.ref == 'refs/heads/master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run version:prerelease -- --preid=alpha --yes

@@ -1,4 +1,5 @@
 {
+  "private": false,
   "name": "@ivoreis/react-alert",
   "version": "0.0.3",
   "description": "Example alert component",

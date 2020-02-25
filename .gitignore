@@ -7,3 +7,4 @@ yarn.lock
 .docz
 docs
 _docs
+lerna-debug.log
