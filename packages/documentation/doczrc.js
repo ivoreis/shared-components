@@ -1,6 +1,6 @@
 export default {
   title: 'Documentation',
-  dest: '../../docs',
+  dest: '../../_docs',
   base: '/shared-components',
   typescript: true,
   docgenConfig: {

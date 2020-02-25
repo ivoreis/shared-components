@@ -5,3 +5,5 @@ yarn.lock
 .rts2_*
 .cache
 .docz
+docs
+_docs
