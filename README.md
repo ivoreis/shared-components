@@ -39,10 +39,9 @@ pkg
 
 ## Todo
 
-- [ ] Create a package generator with all needed configuration
 - [ ] Add github actions
-  - [ ] Build and publish pre/alpha releases on branch PRs
-  - [ ] Build and publish releases on npn pre/alpha tags
+  - [ ] Build alpha packages when PRs merged into Master
+  - [ ] Build documentation and publish packages on releases
 - [x] Add snapshot testing
 - [x] Add eslint
   - [x] Prettier integration

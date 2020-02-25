@@ -2,7 +2,7 @@ name: Test, Build, Publish
 on: [push, pull_request]
 jobs:
   test-build-publish:
-    if: ${{ contains(github.event.message, '[SKIP-CI]') == false }}
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -11,7 +11,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npm run nuke && npm run test
+          npm run nuke
+          npm run test
       - name: Build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

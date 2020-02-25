@@ -1,18 +1,16 @@
 {
   "lerna": "3.4.1",
   "version": "0.1.0-alpha.0",
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "command": {
     "publish": {
       "npmClient": "npm",
       "conventionalCommits": true,
-      "message": "chore(release): publish %s [SKIP-CI]"
+      "message": "chore(release): publish %s skip ci"
     },
     "version": {
       "allowBranch": "master",
-      "message": "chore(release): publish %s [SKIP-CI]"
+      "message": "chore(release): publish %s skip ci"
     }
   }
 }

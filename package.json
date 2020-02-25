@@ -17,6 +17,7 @@
     "version:prerelease": "npm run version -- --conventional-prerelease --no-changelog",
     "version:prerelease:dryrun": "npm run version:prerelease -- --no-git-tag-version --no-push",
     "version:graduate": "npm run version -- --conventional-graduate",
+    "version:graduate:dryrun": "npm run version:graduate -- --no-git-tag-version --no-push",
     "prebuild": "npm run copy:components",
     "copy:components": "npx copyfiles packages/**/documentation/components/*.mdx packages/documentation/src/components --exclude packages/documentation --flat",
     "present:ds": "mdx-deck presentations/design-systems.mdx"
