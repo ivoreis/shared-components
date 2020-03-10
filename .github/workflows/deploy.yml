@@ -1,0 +1,41 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy-documentation:
+    if: "contains(github.event.head_commit.message, 'chore(release)') && !contains(github.event.head_commit.message, '[skip-ci]')"
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Build documentation
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        npm install
+        npm run bootstrap
+        npm run docz:build
+    - name: Deploy to GitHub Pages
+      uses: Cecilapp/GitHub-Pages-deploy@master
+      env:
+        EMAIL: action@github.com
+        GITHUB_ACTOR: Github Actions
+        GH_TOKEN: ${{ secrets.GH_PAGES_TOKEN }}
+        BUILD_DIR: _docs/
+  graduate-packages:
+    if: "contains(github.event.head_commit.message, 'chore(release)') && !contains(github.event.head_commit.message, '[skip-ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Graduate packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm install
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          npm run version:graduate -- --yes
+          npm run publish -- --yes
