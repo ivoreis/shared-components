@@ -21,7 +21,7 @@
     "prebuild": "npm run copy:components",
     "copy:components": "npx copyfiles packages/**/documentation/components/*.mdx packages/documentation/src/components --exclude packages/documentation --flat",
     "present:ds": "mdx-deck presentations/design-systems.mdx",
-    "release": "git commit -m 'chore(release): make release'"
+    "release": "git commit -m 'chore(release): [skip-ci]' --allow-empty && git push origin"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
