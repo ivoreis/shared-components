@@ -39,9 +39,9 @@ pkg
 
 ## Todo
 
-- [ ] Add github actions
-  - [ ] Build alpha packages when PRs merged into Master
-  - [ ] Build documentation and publish packages on releases
+- [x] Add github actions
+  - [x] Build alpha packages when PRs merged into Master
+  - [x] Build documentation and publish packages on releases
 - [x] Add snapshot testing
 - [x] Add eslint
   - [x] Prettier integration
