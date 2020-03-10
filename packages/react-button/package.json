@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@ivoreis/react-button",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0",
   "description": "Example button component",
   "author": "Ivo Reis",
   "license": "MIT",
