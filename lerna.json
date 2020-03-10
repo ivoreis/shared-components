@@ -6,11 +6,11 @@
     "publish": {
       "npmClient": "npm",
       "conventionalCommits": true,
-      "message": "chore(release): publish %s skip ci"
+      "message": "chore(release): publish %s [skip-ci]"
     },
     "version": {
       "allowBranch": "master",
-      "message": "chore(release): publish %s skip ci"
+      "message": "chore(release): publish %s [skip-ci]"
     }
   }
 }
