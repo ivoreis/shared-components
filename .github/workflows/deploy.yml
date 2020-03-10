@@ -37,5 +37,8 @@ jobs:
           npm install
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
+          npm run bootstrap
+          npm run test
+          npm run build
           npm run version:graduate -- --yes
           npm run publish -- --yes
