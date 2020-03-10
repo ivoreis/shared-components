@@ -11,7 +11,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npm run nuke
+          npm install && npm run bootstrap
           npm run test
       - name: Build
         env:
@@ -23,10 +23,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
           npm run version:prerelease -- --preid=alpha --yes
       - name: Promote prerelease
-        if: github.ref == 'refs/heads/master' && contains(github.event.head_commit.message, '[promote]')
+        if: github.ref == 'refs/heads/master' && contains(github.event.head_commit.message, '[graduate]')
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npm run version:prerelease -- --preid=alpha --yes
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          npm run version:graduate -- --preid=alpha --yes
