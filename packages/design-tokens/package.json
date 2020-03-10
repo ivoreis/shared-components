@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@ivoreis/design-tokens",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Design tokens",
   "author": "Ivo Reis",
   "license": "MIT",
