@@ -34,9 +34,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npm install
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
+          npm install
           npm run bootstrap
           npm run test
           npm run build

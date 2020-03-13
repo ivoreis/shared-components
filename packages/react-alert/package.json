@@ -57,34 +57,5 @@
         ]
       }
     }
-  },
-  "eslintConfig": {
-    "root": true,
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "@typescript-eslint",
-      "eslint-plugin-react",
-      "eslint-plugin-react-hooks",
-      "jsx-a11y"
-    ],
-    "extends": [
-      "prettier",
-      "prettier/@typescript-eslint",
-      "prettier/react"
-    ],
-    "settings": {
-      "react": {
-        "pragma": "React",
-        "version": "detect"
-      }
-    },
-    "parserOptions": {
-      "ecmaVersion": 2018,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    },
-    "rules": {}
   }
 }
