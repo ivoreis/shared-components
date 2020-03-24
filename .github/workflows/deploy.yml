@@ -16,6 +16,7 @@ jobs:
       run: |
         npm install
         npm run bootstrap
+        npm run build
         npm run docz:build
     - name: Deploy to GitHub Pages
       uses: Cecilapp/GitHub-Pages-deploy@master
@@ -39,6 +40,6 @@ jobs:
           npm install
           npm run bootstrap
           npm run test
+          npm run version:graduate -- --yes || echo "Nothing to graduate"
           npm run build
-          npm run version:graduate -- --yes
-          npm run publish -- --yes
+          npm run publish -- --yes || echo "Nothing to publish"
