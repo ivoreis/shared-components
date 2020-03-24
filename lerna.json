@@ -1,7 +1,9 @@
 {
   "lerna": "3.4.1",
-  "version": "0.1.2-alpha.1",
-  "packages": ["packages/*"],
+  "version": "0.1.2-alpha.2",
+  "packages": [
+    "packages/*"
+  ],
   "command": {
     "publish": {
       "npmClient": "npm",
