@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.2-alpha.25 (2020-04-08)
+
+**Note:** Version bump only for package @ivoreis/documentation
+
+
+
+
+
 ## 0.1.2-alpha.24 (2020-04-07)
 
 **Note:** Version bump only for package @ivoreis/documentation
