@@ -68,7 +68,7 @@
   },
   "resolutions": {
     "@types/react": "16.9.35",
-    "@types/react-dom": "16.9.7"
+    "@types/react-dom": "16.9.8"
   },
   "husky": {
     "hooks": {
