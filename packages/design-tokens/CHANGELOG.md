@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.2-alpha.106 (2020-06-09)
+
+**Note:** Version bump only for package @ivoreis/design-tokens
+
+
+
+
+
 ## 0.1.2-alpha.105 (2020-06-08)
 
 **Note:** Version bump only for package @ivoreis/design-tokens
