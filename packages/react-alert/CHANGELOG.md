@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.2-alpha.107 (2020-06-10)
+
+**Note:** Version bump only for package @ivoreis/react-alert
+
+
+
+
+
 ## 0.1.2-alpha.106 (2020-06-09)
 
 **Note:** Version bump only for package @ivoreis/react-alert
