@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@ivoreis/documentation",
-  "version": "0.1.2-alpha.202",
+  "version": "0.1.2-alpha.203",
   "license": "MIT",
   "files": [
     "src/",
@@ -15,8 +15,8 @@
     "serve": "docz serve"
   },
   "dependencies": {
-    "@ivoreis/react-alert": "^0.1.2-alpha.202",
-    "@ivoreis/react-button": "^0.1.2-alpha.202",
+    "@ivoreis/react-alert": "^0.1.2-alpha.203",
+    "@ivoreis/react-button": "^0.1.2-alpha.203",
     "docz": "2.3.0-alpha.13",
     "gatsby-plugin-react-axe": "^0.4.0",
     "react": "^16.13.1",
