@@ -19,7 +19,7 @@
     "@ivoreis/react-button": "^0.1.2-alpha.232",
     "docz": "2.3.0-alpha.13",
     "gatsby-plugin-react-axe": "^0.4.0",
-    "react": "^16.13.1",
+    "react": "^17.0.1",
     "react-dom": "^16.13.1",
     "theme-ui": "^0.3.1"
   },
