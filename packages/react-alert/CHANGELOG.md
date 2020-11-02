@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.2-alpha.235 (2020-11-02)
+
+**Note:** Version bump only for package @ivoreis/react-alert
+
+
+
+
+
 ## 0.1.2-alpha.234 (2020-11-02)
 
 **Note:** Version bump only for package @ivoreis/react-alert
