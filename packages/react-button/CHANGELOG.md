@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.2-alpha.254 (2020-11-28)
+
+**Note:** Version bump only for package @ivoreis/react-button
+
+
+
+
+
 ## 0.1.2-alpha.253 (2020-11-27)
 
 **Note:** Version bump only for package @ivoreis/react-button
