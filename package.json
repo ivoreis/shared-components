@@ -43,7 +43,7 @@
     "@types/react-axe": "^3.1.0",
     "@types/react-dom": "^17.0.0",
     "@types/theme-ui": "^0.3.0",
-    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
     "@typescript-eslint/parser": "^2.20.0",
     "commitizen": "^4.0.3",
     "copyfiles": "^2.2.0",
