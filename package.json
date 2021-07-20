@@ -55,7 +55,7 @@
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^4.2.3",
-    "jest": "^26.0.0",
+    "jest": "^27.0.6",
     "lerna": "^4.0.0",
     "mdx-deck": "^4.0.0",
     "parcel": "^1.12.4",
