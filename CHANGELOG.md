@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.2-alpha.388 (2021-07-26)
+
+**Note:** Version bump only for package root
+
+
+
+
+
 ## 0.1.2-alpha.387 (2021-07-20)
 
 **Note:** Version bump only for package root
